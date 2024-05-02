@@ -33,7 +33,6 @@ class AGENT:         # start class AGENT
         new_state_values = np.zeros((HEIGHT, WIDTH))    #make empty matrix for new state values
         iteration = 0   #initialize interactin value
 
-        #***************************************************
         theta = 0.0001      #set small positive number of theta for accuracy of estimation
         delta = theta       #initialize delta for loop
         old_state_values = self.values.copy()       #save current state values
@@ -53,7 +52,6 @@ class AGENT:         # start class AGENT
             #print(new_state_values)     #check new state values
             old_state_values = new_state_values.copy()      # update state values
             #print( )    # for spacing
-        #***************************************************
 
         draw_value_image(iter, np.round(new_state_values, decimals=2), env=env)
         return new_state_values, iteration
@@ -66,7 +64,6 @@ class AGENT:         # start class AGENT
         HEIGHT, WIDTH = env.size()
         policy = old_policy.copy()      # save current policy
 
-        #***************************************************
         policy_stable = True        # set the flag to stop the iteration
         new_policy = old_policy.copy()      # start with old policy
         #print(policy_stable)        # check current flag
@@ -87,7 +84,6 @@ class AGENT:         # start class AGENT
         #print(policy)   # check old policy
         #print(new_policy)       #check new policy
         policy = new_policy     #update better policy
-        #***************************************************
 
         print('policy stable {}:'.format(policy_stable))
         draw_policy_image(iter, np.round(policy, decimals=2), env=env)
